@@ -7,9 +7,16 @@ $base_dir_mapper = [
     "helper" => HELPER_DIR
 ];
 
-$auto_load_class_files = [
+$class_files = [
     CORE_DIR => [
         "Tester.php"
+    ]
+];
+
+$class_mapper = [
+    "Tester.php" => [
+        "slug" => "test",
+        "class_name" => "__Tester"
     ]
 ];
 

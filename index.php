@@ -14,11 +14,8 @@ define("CORE_DIR",SYSTEM_DIR.$core_dir_name.DIR_SEPARATOR);
 
 include_once(CORE_DIR."Loader.php");
 
-$Loader = new __Loader();
+$__load = new __Loader();
 
 /*** 以下デバッグ ***/
-
-$Loader->helper("validate",true);
-
-$Tester = new __Tester();
-$Tester->debugger($Loader->__var);
+// $Loader->helper("validate",true);
+$__load->test->debugger($__load);
