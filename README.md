@@ -38,6 +38,6 @@ PHP製のテンプレートエンジンである[smarty](https://www.smarty.net/
 
 ## 実装内容の詳細
 
-同プロジェクトのreferenceディレクトリの[read.md](https://github.com/huuyafwww/mine-php-fw/blob/master/reference/read.md)に詳細を表記している
+同プロジェクトのreferenceディレクトリの[README.md](https://github.com/huuyafwww/mine-php-fw/tree/develop/reference)に詳細を表記している
 
 また、[Trello](https://trello.com/b/Kr98OefW/php-mine-fw)上でタスク管理を行っている
