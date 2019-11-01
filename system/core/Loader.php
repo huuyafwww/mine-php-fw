@@ -2,6 +2,8 @@
 
 class __Loader{
 
+    public $__var;
+
     /**
      * Init Loader
      */
@@ -13,14 +15,41 @@ class __Loader{
      * Auto Loader
      */
     public function auto_loader(){
-        $this->vars();
+        $this->var_loader();
     }
 
     /**
      * Load Define Var
      */
-    public function vars(){
-        include_once(CORE_DIR."/define.php");
+    public function var_loader(){
+        include_once(CORE_DIR."Define.php");
+        include_once(VARIABLE_FILE);
+        $this->assign_var($auto_assign_mapper);
+        $this->class_loader($auto_load_class_files);
+    }
+
+    /**
+     * Load Class
+     * 
+     * @param array $auto_load_class_files
+     */
+    public function class_loader($auto_load_class_files){
+        foreach($auto_load_class_files as $dir => $files){
+            foreach($files as $file){
+                include_once($dir.$file);
+            }
+        }
+    }
+
+    /**
+     * Assign Var in $__var
+     *
+     * @param array $auto_assign_mapper
+     */
+    public function assign_var($auto_assign_mapper){
+        foreach($auto_assign_mapper as $var_name => $var){
+            $this->__var->$var_name = $var;
+        }
     }
 
     /**
@@ -34,7 +63,10 @@ class __Loader{
         is_array($helpers) || $helpers = [$helpers];
         foreach($helpers as $helper){
             $helper_path = ($this_fw_helper ? PREFIX : "").$helper.".php";
-            include_once(HELPER_DIR.$helper_path);
+            $target_file_path = HELPER_DIR.$helper_path;
+            if(file_exists($target_file_path)){
+                include_once($target_file_path);
+            }
         }
     }
 }

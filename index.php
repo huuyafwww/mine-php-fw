@@ -17,6 +17,8 @@ include_once(CORE_DIR."Loader.php");
 $Loader = new __Loader();
 
 /*** 以下デバッグ ***/
-echo HELPER_DIR."<br>";
 
 $Loader->helper("validate",true);
+
+$Tester = new __Tester();
+$Tester->debugger($Loader->__var);
