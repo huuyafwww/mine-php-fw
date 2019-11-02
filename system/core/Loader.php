@@ -20,8 +20,9 @@ class __Loader{
     protected function auto_loader(){
         $this->define_loader();
         include_once(VARIABLE_FILE);
+        $this->files_loader($class_files);
+        $this->assign_class($class_mapper);
         $this->assign_var($auto_assign_mapper);
-        $this->class_loader($class_files,$class_mapper);
     }
 
     /**
@@ -35,17 +36,23 @@ class __Loader{
      * Load Class
      * 
      * @param array $class_files
+     */
+    protected function files_loader($file_list_by_directory){
+        foreach($file_list_by_directory as $dir => $files){
+            foreach($files as $file){
+                if(file_exists($dir.$file)) include_once($dir.$file);
+            }
+        }
+    }
+
+    /**
+     * Assign Class in $this->slug
+     * 
      * @param array $class_mapper
      */
-    protected function class_loader($class_files,$class_mapper){
-        foreach($class_files as $dir => $files){
-            foreach($files as $file){
-                include_once($dir.$file);
-                if(isset($class_mapper[$file])){
-                    $class = $class_mapper[$file];
-                    $this->{$class["slug"]} = new $class["class_name"]();
-                }
-            }
+    protected function assign_class($class_mapper){
+        foreach($class_mapper as $class){
+            $this->{$class["slug"]} = new $class["class_name"]();
         }
     }
 

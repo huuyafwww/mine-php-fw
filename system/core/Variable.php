@@ -15,11 +15,11 @@ $class_files = [
 ];
 
 $class_mapper = [
-    "Tester.php" => [
+    [
         "slug" => "test",
         "class_name" => "__Tester"
     ],
-    "Action_Hook.php" => [
+    [
         "slug" => "action",
         "class_name" => "__Action_Hook"
     ]

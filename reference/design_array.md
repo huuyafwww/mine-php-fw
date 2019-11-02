@@ -2,7 +2,7 @@
 
 ## core
 
-### Hook
+### Action_Hook
 
 ```
 $hooks = [
