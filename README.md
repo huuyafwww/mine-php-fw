@@ -36,7 +36,29 @@ PHP製のフレームワークである[Codeigniter](https://codeigniter.com/)�
 
 PHP製のテンプレートエンジンである[smarty](https://www.smarty.net/docsv2/ja/)やLaravelの[Blade](https://readouble.com/laravel/5.5/ja/blade.html)等の内部仕様をベースに実装を施すことを想定としている
 
-## 実装内容の詳細
+## 実装内容
+
+PHP製のFWのみの開発とせず、組み込みのManagement SystemをHeadless CMSで開発・実装も行う
+
+### 技術仕様
+
+- PHP
+- MYSQL
+- HTML
+- CSS
+- Javascript
+    - jQuery
+
+### 組み込みHeadless CMSでの実装事項
+
+- Framework Update
+- REST API Management
+- Message Queueing
+- Create Mirror Environment
+- Auto Backup
+- Other Useful Tool
+
+### 詳細
 
 同プロジェクトのreferenceディレクトリの[README.md](https://github.com/huuyafwww/mine-php-fw/tree/develop/reference)に詳細を表記している
 
