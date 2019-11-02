@@ -7,7 +7,7 @@ $base_dir_mapper = [
     "helper" => HELPER_DIR
 ];
 
-$class_files = [
+$system_file_list = [
     CORE_DIR => [
         "Tester.php",
         "Action_Hook.php"

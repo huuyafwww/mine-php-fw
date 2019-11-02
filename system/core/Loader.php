@@ -20,7 +20,7 @@ class __Loader{
     protected function auto_loader(){
         $this->define_loader();
         include_once(VARIABLE_FILE);
-        $this->files_loader($class_files);
+        $this->files_loader($system_file_list);
         $this->assign_class($class_mapper);
         $this->assign_var($auto_assign_mapper);
     }
@@ -94,5 +94,25 @@ class __Loader{
         if(file_exists($view_file_path)){
             include_once($view_file_path);
         }
+    }
+
+    /**
+     * Create HTML in Head
+     *
+     * @return string
+     */
+    public function get_header(){
+        include_once(VIEW_HEAD_FILE);
+        $heads = "";
+        foreach($head_tags as $tag_name => $tag_info){
+            foreach($tag_info["list"] as $tag){
+                $heads .= "<".$tag_name;
+                foreach($tag as $attr => $value){
+                    $heads .= " ".$attr."=\"".$value."\"";
+                }
+                $heads .= $tag_info["close"] ? "</".$tag_name.">\n" : ">\n";
+            }
+        }
+        return $heads;
     }
 }

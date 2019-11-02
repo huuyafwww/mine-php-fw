@@ -37,6 +37,10 @@
     - base
         - init
         - layout
+    - config
+        - db.php
+        - head.php
+        - foot.php
     - controllers
         - requests
             - post

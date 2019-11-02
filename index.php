@@ -16,10 +16,13 @@ include_once(CORE_DIR."Loader.php");
 
 $__load = new __Loader();
 
+include_once(USER_DEFINE_FILE);
+
+include_once(USER_INIT_FILE);
+
 /*** 以下デバッグ ***/
 // $Loader->helper("validate",true);
-$__load->action->add_hook("htmlspecialchars","var_dump");
-// $__load->test->debugger($__load);
+// $__load->action->add_hook("htmlspecialchars","var_dump");
+// $__load->test->debugger($__load->__var->config_files);
 // $__load->action->do("htmlspecialchars","<h1 class='aaa'>!=~あああ</_h1>");
-$__load->test->debugger($_SERVER);
-echo NOW_TIME;
+// $__load->test->debugger($_SERVER);
