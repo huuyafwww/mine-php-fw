@@ -55,10 +55,6 @@ class __Action_Hook{
      * @param string $hook_name
      */
     public function do($hook_name,$argv =  NULL){
-        echo "<pre>";
-        print_r($this->get_all_hooks());
-        print_r($this->get_hook($hook_name));
-        echo "</pre>";
         $argv = $hook_name($argv);
         foreach($this->get_hook($hook_name) as $action){
             $action["name"]($argv);

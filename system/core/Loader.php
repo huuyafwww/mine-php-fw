@@ -105,14 +105,17 @@ class __Loader{
         include_once(VIEW_HEAD_FILE);
         $heads = "";
         foreach($head_tags as $tag_name => $tag_info){
+            $index = 0;
             foreach($tag_info["list"] as $tag){
+                if($index > 0) $heads .= "\t\t";
                 $heads .= "<".$tag_name;
                 foreach($tag as $attr => $value){
                     $heads .= " ".$attr."=\"".$value."\"";
                 }
                 $heads .= $tag_info["close"] ? "</".$tag_name.">\n" : ">\n";
+                $index++;
             }
         }
-        return $heads;
+        echo $heads;
     }
 }
