@@ -14,3 +14,15 @@ function __h($stringer){
     }
     return $stringer;
 }
+
+
+/**
+ * Sanitize everything in HTTP methods POST and GET
+ *
+ * @param string $METHOD_NAME
+ */
+function __h_method($METHOD_NAME){
+    foreach($$METHOD as $key => $value){
+        $$METHOD_NAME[$key] = htmlspecialchars($value);
+    }
+}

@@ -15,6 +15,5 @@ define("VIEWS_DIR",APP_DIR."views".DIR_SEPARATOR);
 define("CONFIG_DIR",APP_DIR."config".DIR_SEPARATOR);
 define("USER_CORE_DIR",APP_DIR."core".DIR_SEPARATOR);
 
-
 define("VARIABLE_FILE",CORE_DIR."Variable.php");
 define("USER_DEFINE_FILE",USER_CORE_DIR."define.php");
