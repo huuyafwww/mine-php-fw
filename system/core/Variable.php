@@ -9,7 +9,8 @@ $base_dir_mapper = [
 
 $class_files = [
     CORE_DIR => [
-        "Tester.php"
+        "Tester.php",
+        "Action_Hook.php"
     ]
 ];
 
@@ -17,6 +18,10 @@ $class_mapper = [
     "Tester.php" => [
         "slug" => "test",
         "class_name" => "__Tester"
+    ],
+    "Action_Hook.php" => [
+        "slug" => "action",
+        "class_name" => "__Action_Hook"
     ]
 ];
 

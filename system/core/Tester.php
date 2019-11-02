@@ -7,9 +7,9 @@ class __Tester{
      *
      * @param mixed $var
      */
-    public function debugger($var){
+    public function debugger($var,$dump = false){
         echo "<pre>";
-        print_r($var);
+        $dump ? var_dump($var) : print_r($var);
         echo "</pre>";
     }
 }

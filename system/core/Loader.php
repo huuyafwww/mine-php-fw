@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Load the Base Proccess File
+ */
 class __Loader{
 
     public $__var;
@@ -38,8 +41,10 @@ class __Loader{
         foreach($class_files as $dir => $files){
             foreach($files as $file){
                 include_once($dir.$file);
-                $class = $class_mapper[$file];
-                $this->{$class["slug"]} = new $class["class_name"]();
+                if(isset($class_mapper[$file])){
+                    $class = $class_mapper[$file];
+                    $this->{$class["slug"]} = new $class["class_name"]();
+                }
             }
         }
     }
