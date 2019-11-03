@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 define("DIR_SEPARATOR","/");
 
 define("ROOT_DIR",__DIR__.DIR_SEPARATOR);
@@ -16,6 +18,7 @@ include_once(CORE_DIR."Loader.php");
 
 $__load = new __Loader();
 
+exit;
 include_once(USER_DEFINE_FILE);
 
 include_once(USER_INIT_FILE);

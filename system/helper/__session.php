@@ -22,6 +22,36 @@ function __set_sessions($session){
 }
 
 /**
+ * Delete Single SESSION
+ *
+ * @param string $session_name
+ */
+function __delete_session($session_name){
+    unset($_SESSION[$session_name]);
+}
+
+/**
+ * Delete Single SESSION
+ *
+ * @param string $session_names
+ */
+function __delete_sessions($session_names){
+    foreach($session_names as $session_name){
+        unset($_SESSION[$session_name]);
+    }
+}
+
+/**
+ * Safe SESSION Destroy
+ *
+ */
+function __session_end(){
+    $_SESSION = [];
+    session_destroy();
+    unset($_COOKIE[SESSION_NAME]);
+}
+
+/**
  * Get Single SESSION Value
  *
  * @param string $session_name

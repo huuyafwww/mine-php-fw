@@ -1,5 +1,6 @@
 <?php
 
+define("SESSION_NAME",session_name());
 define("TOKEN_LENGTH",16);
 define("TOKEN",bin2hex(openssl_random_pseudo_bytes(TOKEN_LENGTH)));
 
