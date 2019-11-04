@@ -12,6 +12,7 @@ class __Loader{
      */
     public function __construct(){
         $this->auto_loader();
+        set_error_handler("error_handler",E_ALL);
     }
 
     /**

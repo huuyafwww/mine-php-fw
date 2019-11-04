@@ -9,6 +9,7 @@ $base_dir_mapper = [
 
 $system_file_list = [
     CORE_DIR => [
+        "Common.php",
         "Tester.php",
         "Action_Hook.php"
     ]

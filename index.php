@@ -18,6 +18,10 @@ include_once(CORE_DIR."Loader.php");
 
 $__load = new __Loader();
 
+error_reporting(-1);
+ini_set('display_errors',1);
+error_reporting(E_ALL);
+echo $time;
 exit;
 include_once(USER_DEFINE_FILE);
 

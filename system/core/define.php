@@ -18,3 +18,16 @@ define("USER_CORE_DIR",APP_DIR."core".DIR_SEPARATOR);
 
 define("VARIABLE_FILE",CORE_DIR."Variable.php");
 define("USER_DEFINE_FILE",USER_CORE_DIR."define.php");
+
+define("ERROR_LEVEL_1","Error");
+define("ERROR_LEVEL_2","Warning");
+define("ERROR_LEVEL_4","Parsing Error");
+define("ERROR_LEVEL_8","Notice");
+define("ERROR_LEVEL_16","Core Error");
+define("ERROR_LEVEL_32","Core Warning");
+define("ERROR_LEVEL_64","Compile Error");
+define("ERROR_LEVEL_128","Compile Warning");
+define("ERROR_LEVEL_256","User Error");
+define("ERROR_LEVEL_512","User Warning");
+define("ERROR_LEVEL_1024","User Notice");
+define("ERROR_LEVEL_2048","Runtime Notic");
