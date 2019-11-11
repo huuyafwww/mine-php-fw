@@ -45,7 +45,7 @@ function __delete_sessions($session_names){
  * Safe SESSION Destroy
  *
  */
-function __session_end(){
+function __end_session(){
     $_SESSION = [];
     session_destroy();
     unset($_COOKIE[SESSION_NAME]);

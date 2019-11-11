@@ -15,6 +15,17 @@ $system_file_list = [
     ]
 ];
 
+$helper_file_list = [
+    HELPER_DIR => [
+        "__array.php",
+        "__dom_parser.php",
+        "__file.php",
+        "__get_boolean.php",
+        "__session.php",
+        "__validate.php"
+    ]
+];
+
 $class_mapper = [
     [
         "slug" => "test",

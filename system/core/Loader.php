@@ -5,12 +5,13 @@
  */
 class __Loader{
 
-    public $__var;
+    protected $all_helpers;
 
     /**
      * Init Loader
      */
-    public function __construct(){
+    public function __construct($load_all_helpers = true){
+        $this->all_helpers = !$load_all_helpers;
         $this->auto_loader();
         set_error_handler("error_handler",E_ALL);
     }
@@ -24,6 +25,7 @@ class __Loader{
         $this->files_loader($system_file_list);
         $this->assign_class($class_mapper);
         $this->assign_var($auto_assign_mapper);
+        $this->all_helpers || $this->files_loader($helper_file_list);
     }
 
     /**
@@ -54,17 +56,21 @@ class __Loader{
     protected function assign_class($class_mapper){
         foreach($class_mapper as $class){
             $this->{$class["slug"]} = new $class["class_name"]();
+            // ${$class["slug"]} = new $class["class_name"]();
+            // foreach(get_class_methods(${$class["slug"]}) as $method){
+            //     $this->$method = ${$class["slug"]}->$method();
+            // }
         }
     }
 
     /**
-     * Assign Var in $__var
+     * Assign Var in $this
      *
      * @param array $auto_assign_mapper
      */
     protected function assign_var($auto_assign_mapper){
         foreach($auto_assign_mapper as $var_name => $var){
-            $this->__var->$var_name = $var;
+            $this->$var_name = $var;
         }
     }
 
