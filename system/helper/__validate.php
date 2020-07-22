@@ -22,7 +22,7 @@ function __h($stringer){
  * @param string $METHOD_NAME
  */
 function __h_method($METHOD_NAME){
-    foreach($$METHOD as $key => $value){
+    foreach($$METHOD_NAME as $key => $value){
         $$METHOD_NAME[$key] = htmlspecialchars($value);
     }
 }

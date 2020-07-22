@@ -4,7 +4,7 @@
  * Saving File
  *
  * @param string $file
- * @param mixed $save_data
+ * @param mixed $data
  * @param bool $append
  * @return bool
  */
@@ -28,6 +28,7 @@ function __get_file_list($dir,$extension = "*"){
  * Get ALL FILE PATH from $dir
  *
  * @param string $dir
+ * @param string $extension
  * @return array
  */
 function __get_all_file_list($dir,$extension = "*"){

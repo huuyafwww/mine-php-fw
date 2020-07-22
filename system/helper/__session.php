@@ -13,10 +13,10 @@ function __set_session($session_name,$session_value = true){
 /**
  * Register Multi SESSION
  *
- * @param array $session
+ * @param array $sessions
  */
-function __set_sessions($session){
-    foreach($session as $session_name => $session_value){
+function __set_sessions($sessions){
+    foreach($sessions as $session_name => $session_value){
         $_SESSION[$session_name] = $session_value;
     }
 }
@@ -31,7 +31,7 @@ function __delete_session($session_name){
 }
 
 /**
- * Delete Single SESSION
+ * Delete Multi SESSION
  *
  * @param string $session_names
  */

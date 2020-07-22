@@ -29,7 +29,7 @@ class __Loader{
     }
 
     /**
-     * Load Define Var
+     * Load Define Constants
      */
     protected function define_loader(){
         include_once(CORE_DIR."Define.php");
@@ -66,7 +66,7 @@ class __Loader{
     /**
      * Assign Var in $this
      *
-     * @param array $auto_assign_mapper
+     *  @param array $auto_assign_mapper
      */
     protected function assign_var($auto_assign_mapper){
         foreach($auto_assign_mapper as $var_name => $var){
@@ -77,7 +77,7 @@ class __Loader{
     /**
      * Load Helper File
      *
-     * @param string|string[] $helpers = Helper name
+     * @param string|array $helpers = Helper name
      * @param bool $this_fw_helper
      */
     public function helper($helpers,$this_fw_helper = false){
