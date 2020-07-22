@@ -1,0 +1,8 @@
+# Any Extension
+*.log
+*.zip
+.env
+
+# Any File
+.DS_Store
+composer.lock
